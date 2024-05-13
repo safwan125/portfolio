@@ -54,18 +54,18 @@ html{
 }
 
 #svg {
-  height: 550px;
-  width: 550px;
+  height: 150px;
+  width: 150px;
   stroke: white;
-  fill-opacity: 50;
-  stroke-width: 10px;
+  fill-opacity: 0;
+  stroke-width: 3px;
   stroke-dasharray: 4500;
   animation: draw 8s ease;
 }
 
 @keyframes draw {
   0% {
-    stroke-dashoffset: 40500;
+    stroke-dashoffset: 4500;
   }
   100% {
     stroke-dashoffset: 0;
