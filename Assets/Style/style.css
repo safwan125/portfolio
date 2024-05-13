@@ -1,19 +1,93 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
+
+
 :root{
   --color-1: #0f1016;
   --text-color: #f0f0f0;
-  --accent-color: red;
+  --accent-color: blue;
 }
+
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+
 html{
   font-size: 12pt;
-  font-family: Poppins, Segoe UI, Tahoma, sans-serif;
-  background-color: #c3f1ff;
+  font-family: Poppins, Michroma, Segoe UI, Tahoma, sans-serif;
+  height: 100vh;
+  background-image: url("../Images/bg-img.jpg");
+  background-repeat: no-repeat;
 }
+
+
+
+.container {
+  background-color: black;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/*loading page animations*/
+.loading-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, rgb(0, 0, 0), rgb(0, 0, 50), #000000);
+
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  color: #191654;
+}
+
+#svg {
+  height: 550px;
+  width: 550px;
+  stroke: white;
+  fill-opacity: 50;
+  stroke-width: 10px;
+  stroke-dasharray: 4500;
+  animation: draw 8s ease;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 40500;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.name-container {
+  height: 30px;
+  overflow: hidden;
+}
+
+.logo-name {
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: 12px;
+  text-transform: uppercase;
+  margin-left: 20px;
+  font-weight: bolder;
+}
+
+
+
 nav{
   height: 60px;
   background-color: var(--color-1);
@@ -24,8 +98,10 @@ nav{
   padding-left: 10px;
   padding-right: 20px;
   border-radius: 10px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.65);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.65);
+  z-index: 100;
 }
+
 .links-container{
   height: 100%;
   width: 100%;
@@ -33,50 +109,55 @@ nav{
   flex-direction: row;
   align-items: center;
 }
+
 nav a{
   height: 100%;
   padding: 0 20px;
+  margin: 5px;
   display: flex;
   align-items: center;
   text-decoration: none;
   color: var(--text-color);
 }
+
 nav a:hover{
   background-color: var(--accent-color);
   height: 45px;
-  border-radius: 10px;
+  border-radius: 50px;
   transition-duration: 0.3s;
   color: var(--color-1);
-  box-shadow: 0px 0px 30px rgba(255, 0, 0, 0.65);
+  box-shadow: 0px 0px 30px rgba(0, 0, 255, 0.65);
 }
 
-nav img{
-  height: 45px;
-}
 .logo-text{
   margin-right: auto;
   font-family: "Courgette", cursive;
   font-weight: 400;
   font-style: normal;
 }
+
 .logo-text:hover{
   background-color: var(--color-1);
   color: var(--accent-color);
-  height: 60px;
-  border-radius: 0;
-  transition-duration: 0.3s;
   box-shadow: none;
-  font-size: 18px;
 }
+
 nav svg{
   fill: var(--text-color);
 }
+
 #sidebar-active{
   display: none;
 }
+
 .open-sidebar-button, .close-sidebar-button{
   display: none;
 }
+
+
+
+
+/*For mobile devices*/
 @media(max-width: 580px){
   .links-container{
     flex-direction: column;
@@ -92,6 +173,7 @@ nav svg{
     box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
     transition: 0.75s ease-out;
   }
+
   nav a{
     box-sizing: border-box;
     height: auto;
@@ -99,23 +181,28 @@ nav svg{
     padding: 20px 30px;
     justify-content: flex-start;
   }
-  nav img{
-    display: none;
-  }
+
   nav a:hover{
     background-color: var(--accent-color);
     height: 65px;
     border-radius: 10px;
-    transition-duration: 0.2s;
+    transition-duration: 0.6s;
+    margin-left: 10px;
     color: #0f1016;
   }
+  .logo-text{
+    display: none;
+  }
+
   .open-sidebar-button, .close-sidebar-button{
     padding: 20px;
     display: block;
   }
+
   #sidebar-active:checked ~ .links-container{
     right: 0;
   }
+
   #sidebar-active:checked ~ #overlay{
     height: 100%;
     width: 100%;
@@ -124,4 +211,5 @@ nav svg{
     left: 0;
     z-index: 9;
   }
+
 }
