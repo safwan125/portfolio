@@ -187,7 +187,7 @@ nav svg{
     width: 300px;
 
     background-color: var(--color-1);
-    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.25);
     transition: 0.75s ease-out;
   }
 
