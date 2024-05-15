@@ -106,9 +106,10 @@ nav{
   padding-left: 10px;
   padding-right: 20px;
   border-radius: 10px;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.65);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.65);
   z-index: 100;
   position: sticky;
+  transition-duration: 0.5s;
 }
 
 .links-container{
@@ -127,6 +128,12 @@ nav a{
   align-items: center;
   text-decoration: none;
   color: var(--text-color);
+}
+
+nav:hover{
+  margin: 13px;
+  box-shadow: 0px 0px 20px rgb(26, 26, 26);
+  transition-duration: 0.5s;
 }
 
 nav a:hover{
@@ -149,7 +156,7 @@ nav a:hover{
   background-color: var(--color-1);
   color: var(--accent-color);
   box-shadow: none;
-  text-shadow: 0px 0px 15px #46ddd9;
+  text-shadow: 0px 0px 25px #00fff7;
 }
 
 nav svg{
