@@ -200,12 +200,6 @@ nav svg{
     transition: 0.75s ease-out;
   }
 
-  #svg{
-    height: 400px;
-    width: 400px;
-    margin-bottom: 100px;
-  }
-
   nav a{
     box-sizing: border-box;
     height: auto;
